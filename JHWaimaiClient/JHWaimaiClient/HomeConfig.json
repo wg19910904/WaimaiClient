@@ -1,0 +1,41 @@
+{
+    "module2":{
+        "1":"JHHomeBannerCell",
+        "2":"JHHomeBannerCell",
+    },
+    "module3":{
+        "1":"JHHomeCateCellFive",
+        "2":"JHHomeCateCellFour",
+    },
+    "module4":{
+        
+    },
+    "module5":{
+        "1":"JHHomeADCellScroll",
+        "2":"JHHomeADCellTwo",
+        "3":"JHHomeADCellOne",
+        "4":"JHHomeADCellThree",
+        "5":"JHHomeADCellFour",
+        "6":"JHHomeADCellFour_two",
+        "7":"JHHomeADCellSix",
+    },
+    "module6":{
+        "1":"JHHomeADCellScroll",
+        "2":"JHHomeADCellTwo",
+        "3":"JHHomeADCellOne",
+        "4":"JHHomeADCellThree",
+        "5":"JHHomeADCellFour",
+        "6":"JHHomeADCellFour_two",
+        "7":"JHHomeADCellSix",
+    },
+    "module7":{
+        "1":"JHHomeADCateCell_more",
+        "2":"JHHomeADCellFour_more",
+    },
+    "module8":{
+        "0":"JHHomeADCell_MarginImg"
+    },
+    "module10":{
+        
+    }
+}

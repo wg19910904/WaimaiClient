@@ -1,0 +1,227 @@
+PODS:
+  - AlicloudPush (1.9.8):
+    - AlicloudUT
+    - AlicloudUtils
+  - AlicloudUT (5.2.0.5):
+    - AlicloudUTDID
+  - AlicloudUTDID (1.1.0.19)
+  - AlicloudUtils (1.3.4):
+    - AlicloudUTDID
+  - AMap3DMap (4.6.1):
+    - AMapFoundation (~> 1.3)
+  - AMapFoundation (1.3.4)
+  - AMapSearch (4.5.0):
+    - AMapFoundation (~> 1.2)
+  - Bugly (2.5.0)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - GoogleMaps (2.2.0):
+    - GoogleMaps/Maps (= 2.2.0)
+  - GoogleMaps/Base (2.2.0)
+  - GoogleMaps/Maps (2.2.0):
+    - GoogleMaps/Base
+  - GooglePlacePicker (2.2.0):
+    - GoogleMaps (= 2.2.0)
+    - GooglePlaces (= 2.2.0)
+  - GooglePlaces (2.2.0):
+    - GoogleMaps/Base (= 2.2.0)
+  - iOS-AlipaySDK (3.0.2):
+    - iOS-AlipaySDK/Core (= 3.0.2)
+  - iOS-AlipaySDK/Core (3.0.2)
+  - IQKeyboardManager (4.0.8)
+  - JCore (1.1.1)
+  - JPush (3.0.2):
+    - JCore (~> 1.1.1)
+  - JRDB (2.1.1):
+    - FMDB
+  - libqrencode (3.4.2)
+  - LSSafeProtector (1.0.3)
+  - Masonry (1.0.2)
+  - Meiqia (3.4.7):
+    - Meiqia/MeiqiaSDK (= 3.4.7)
+    - Meiqia/MQChatViewController (= 3.4.7)
+  - Meiqia/MeiqiaSDK (3.4.7)
+  - Meiqia/MQChatViewController (3.4.7):
+    - Meiqia/MeiqiaSDK
+  - MJExtension (3.0.13)
+  - mp3lame-for-ios (0.1.1)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
+  - Reachability (3.2)
+  - ReactiveObjC (2.1.2)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
+  - UMengAnalytics-NO-IDFA (4.2.5)
+  - UMengUShare (6.0.3):
+    - UMengUShare/Core (= 6.0.3)
+    - UMengUShare/Network (= 6.0.3)
+    - UMengUShare/Social (= 6.0.3)
+    - UMengUShare/UI (= 6.0.3)
+  - UMengUShare/Core (6.0.3):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.0.3)
+  - UMengUShare/Social (6.0.3):
+    - UMengUShare/Core
+    - UMengUShare/Social/AlipayShare (= 6.0.3)
+    - UMengUShare/Social/Douban (= 6.0.3)
+    - UMengUShare/Social/Email (= 6.0.3)
+    - UMengUShare/Social/Facebook (= 6.0.3)
+    - UMengUShare/Social/Flickr (= 6.0.3)
+    - UMengUShare/Social/Instagram (= 6.0.3)
+    - UMengUShare/Social/Kakao (= 6.0.3)
+    - UMengUShare/Social/LaiWang (= 6.0.3)
+    - UMengUShare/Social/Line (= 6.0.3)
+    - UMengUShare/Social/Linkedin (= 6.0.3)
+    - UMengUShare/Social/Pinterest (= 6.0.3)
+    - UMengUShare/Social/QQ (= 6.0.3)
+    - UMengUShare/Social/Renren (= 6.0.3)
+    - UMengUShare/Social/Sina (= 6.0.3)
+    - UMengUShare/Social/SMS (= 6.0.3)
+    - UMengUShare/Social/TencentWeibo (= 6.0.3)
+    - UMengUShare/Social/Tumblr (= 6.0.3)
+    - UMengUShare/Social/Twitter (= 6.0.3)
+    - UMengUShare/Social/WeChat (= 6.0.3)
+    - UMengUShare/Social/WhatsApp (= 6.0.3)
+    - UMengUShare/Social/YiXin (= 6.0.3)
+  - UMengUShare/Social/AlipayShare (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Douban (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Email (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Facebook (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Flickr (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Instagram (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Kakao (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/LaiWang (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Line (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Linkedin (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Pinterest (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/QQ (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Renren (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Sina (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/SMS (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/TencentWeibo (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Tumblr (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Twitter (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/WeChat (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/WhatsApp (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/YiXin (6.0.3):
+    - UMengUShare/Core
+  - UMengUShare/UI (6.0.3):
+    - UMengUShare/Core
+
+DEPENDENCIES:
+  - AlicloudPush (~> 1.9.8)
+  - AMap3DMap (~> 4.6.1)
+  - AMapSearch (~> 4.5.0)
+  - Bugly
+  - GoogleMaps (~> 2.2.0)
+  - GooglePlacePicker (~> 2.2.0)
+  - GooglePlaces (~> 2.2.0)
+  - iOS-AlipaySDK (~> 3.0.2)
+  - IQKeyboardManager (~> 4.0.8)
+  - JPush (~> 3.0.2)
+  - JRDB (~> 2.1.1)
+  - libqrencode (~> 3.4.2)
+  - LSSafeProtector
+  - Masonry (~> 1.0.2)
+  - Meiqia (~> 3.4.7)
+  - MJExtension (~> 3.0.13)
+  - mp3lame-for-ios (~> 0.1.1)
+  - NJKWebViewProgress (~> 0.2.3)
+  - Reachability (~> 3.2)
+  - ReactiveObjC (~> 2.1.2)
+  - SDWebImage (~> 4.2.0)
+  - UMengAnalytics-NO-IDFA (~> 4.2.5)
+  - UMengUShare (~> 6.0.3)
+
+SPEC REPOS:
+  https://github.com/aliyun/aliyun-specs.git:
+    - AlicloudPush
+    - AlicloudUT
+    - AlicloudUTDID
+    - AlicloudUtils
+  https://github.com/cocoapods/specs.git:
+    - AMap3DMap
+    - AMapFoundation
+    - AMapSearch
+    - Bugly
+    - FMDB
+    - GoogleMaps
+    - GooglePlacePicker
+    - GooglePlaces
+    - iOS-AlipaySDK
+    - IQKeyboardManager
+    - JCore
+    - JPush
+    - JRDB
+    - libqrencode
+    - LSSafeProtector
+    - Masonry
+    - Meiqia
+    - MJExtension
+    - mp3lame-for-ios
+    - NJKWebViewProgress
+    - Reachability
+    - ReactiveObjC
+    - SDWebImage
+    - UMengAnalytics-NO-IDFA
+    - UMengUShare
+
+SPEC CHECKSUMS:
+  AlicloudPush: 50df02cff716d9ac950ceb89195d447e7af003a2
+  AlicloudUT: 1b52965b97c5fc0b630901ce184391fbe1ef8479
+  AlicloudUTDID: 14b582e41b39bc66e5a3420b61dafd0567ef4603
+  AlicloudUtils: d460b5a99fe1479523aecc48011a2eec05db1363
+  AMap3DMap: eb6656fb441ed7eb310b3c121032e947d4d649e5
+  AMapFoundation: 486493b8e9ae4a1cb7ce2d8d8978ee1aabf9bb34
+  AMapSearch: 7a6ebc20a42e34a021b042b047f198082fc2fc30
+  Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
+  GooglePlacePicker: 345b1aabd42c9d6d9bf2369c1bae1234d903e764
+  GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
+  iOS-AlipaySDK: 97d1c1fe06083e5bf2d9b56981cf469eeb508b78
+  IQKeyboardManager: 1a8189fa153bf09044355ee0ad36826f6767e7f7
+  JCore: 2210a789c8efb7dc2a46b1c24d2209b995b18ad2
+  JPush: 01a693fafe51b93eafc2e368bbc7a7cc07e12ce4
+  JRDB: 3d39482c7314ee58e4c0a8617f131324ccabc214
+  libqrencode: 43dc34b89af83ea4b07c409cd8e09c87aa3a1c9f
+  LSSafeProtector: feffdbec3ff798ba8962f91880c0efdbebc835ed
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  Meiqia: af9d79fb853b207703153000f3d917e14fa14f50
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  mp3lame-for-ios: 4daeb5686885be66438154050e3fe975d4ee1f07
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  ReactiveObjC: 7b6782ae39f9ac0f57205c3b0c0b69b9dd7048c0
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  UMengAnalytics-NO-IDFA: 16666e32edce5be44ae5b14aaaa7f3582e09d6ab
+  UMengUShare: f231fc086d789d4e560a5090dcc13a2db15c686d
+
+PODFILE CHECKSUM: 9b2ae81cd58d5e7cad33fad39569f85505908eb2
+
+COCOAPODS: 1.5.2

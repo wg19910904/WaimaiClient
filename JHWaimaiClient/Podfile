@@ -1,0 +1,41 @@
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/aliyun/aliyun-specs.git'
+
+target:JHWaimaiClient  do
+
+platform :ios, '8.0'
+pod 'Masonry' ,’~> 1.0.2'
+pod 'MJExtension' ,’~> 3.0.13'
+pod 'SDWebImage' ,’~> 4.2.0'
+pod 'AMap3DMap' ,’~> 4.6.1'
+pod 'AMapSearch' ,’~> 4.5.0'
+pod 'NJKWebViewProgress' ,’~> 0.2.3'
+pod 'UMengAnalytics-NO-IDFA' ,’~> 4.2.5'
+pod 'IQKeyboardManager' ,’~> 4.0.8'
+pod 'libqrencode' ,’~> 3.4.2'
+pod 'mp3lame-for-ios' ,’~> 0.1.1'
+pod 'iOS-AlipaySDK' ,’~> 3.0.2'
+pod 'JRDB' ,’~> 2.1.1'
+pod 'Reachability' ,'~> 3.2'
+pod 'JPush' ,’~> 3.0.2'
+pod 'UMengUShare' ,’~> 6.0.3'
+pod 'GooglePlaces' ,’~> 2.2.0'
+pod 'GooglePlacePicker' ,’~> 2.2.0'
+pod 'GoogleMaps' ,’~> 2.2.0'
+pod 'ReactiveObjC' ,’~> 2.1.2'
+pod 'AlicloudPush' ,’~> 1.9.8'
+pod 'Meiqia' ,’~> 3.4.7'
+pod 'LSSafeProtector'
+pod 'Bugly'
+end
+
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 8.0
+                config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '8.0'
+            end
+        end
+    end
+end

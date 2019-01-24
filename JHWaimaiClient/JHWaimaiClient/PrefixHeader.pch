@@ -1,0 +1,283 @@
+//
+//  PrefixHeader.pch
+//  JHCommunityClient_V3
+//
+//  Created by ijianghu on 2017/4/26.
+//  Copyright © 2017年 xixixi. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#endif /* PrefixHeader_pch */
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+// model中需要用到的block
+typedef void(^ModelBlock)(id model,NSString *msg);
+typedef void(^DataBlock)(NSArray *arr,NSString *msg);
+typedef void(^MsgBlock)(BOOL success,NSString *msg);
+typedef void(^DicBlock)(NSDictionary *json,NSString *msg);
+typedef void(^ClickIndexBlock)(NSInteger index,NSString *msg);
+typedef void(^DataBlockAndColor)(NSArray *arr,NSString *msg,NSString *colorS);
+#ifdef __OBJC__
+#import "UIColor+Util.h"
+#import "ZQProgressHud.h"
+#import "UIView+Extension.h"
+#import <Masonry.h>
+#import "UIButton+Extension.h"
+#import <MJExtension.h>
+#import "JHConfigurationTool.h"
+#import "UIButton+XHTool.h"
+#import "JHUserModel.h"
+#import <JHHttpTool/JHHttpTool.h>
+#import "UIViewController+addProperty.h"
+#import "WMShopDBModel.h"
+#import <UIImageView+WebCache.h>
+#import "UIScrollView+RefreshTools.h"
+#endif
+
+#define Current_Is_Other_ShopCart [WMShopDBModel shareWMShopDBModel].current_shopcartNum > 0
+
+#define YF_SAFE_BLOCK(BlockName, ...) ({ !BlockName ? nil : BlockName(__VA_ARGS__); })
+
+#define YF_TRY_CODE(...) @try{ __VA_ARGS__ }\
+        @catch(NSException *exception) {\
+            NSLog(@"exception:%@", exception);\
+        }\
+        @finally { }
+
+/************************URL---key *************************/
+//#define KReplace_Url @"waimai.jhcms.cn"
+//#define KReplace_Url @"wmdemo.jhcms.cn"
+//#define KReplace_Url @"wmfz.weizx.cn"
+#define KReplace_Url @"wmv4.weizx.cn"
+
+// 是否只是外卖模块
+#define IsWaiMai  YES
+// 是否只是团购模块
+#define IsTuanGou NO
+// 是否只是商城模块
+#define IsMall    NO
+// 是否只是跑腿
+#define IsPaoTui  NO
+// 跑腿模块是否是原生
+#define IS_NATIVE_PAOTUI NO
+// 是否含有信用卡支付
+#define IsHaveBankCardPay NO
+//是否有分站功能
+#define IsHaveFenZhan YES
+// YES 首页的选择位置 显示 更多地址
+#define MoreAddress NO
+
+#define KPROTOCL @"http://"
+
+#define IPADDRESS [NSString stringWithFormat:@"%@%@/api.php",KPROTOCL,KReplace_Url]
+
+//图片链接完整
+#define IMAGEADDRESS @""
+#define ImageUrl(url)  [NSString stringWithFormat:@"%@",url]
+
+//用户协议的网址
+#define userAgreeUrl  [NSString stringWithFormat:@"%@%@/page-protocol.html",KPROTOCL,KReplace_Url]
+
+//关于我们
+#define about_self_url   [NSString stringWithFormat:@"%@%@/page/about.html",KPROTOCL,KReplace_Url]
+
+//高德地图
+#define GAODE_KEY @"38c5cda2c29db4b20e09e21a107f0e46"
+//UM SDK
+#define UM_KEY @"5943962e65b6d645ba0018a1"
+//QQ
+#define QQAPPID @"1105110255"
+#define QQAPPKEY @"bdiuSz2x3iPIaMcX"
+//微信
+#define WXAPPID @"wx7a51ef51e013a0af"
+//极光
+#define JPUSHKEY @"e97ce308fcd9c6170e0d36db"
+//#define AliYunPushKey @"24927679"
+#define AliYunPushKey @""
+#define AliYunPushSecret @"261fbaf19dd24ea3cb3e5078cb0aa9cd"
+#define SupportAliYunPush ([AliYunPushKey length] != 0)
+
+// 如果是国际化客户,需要配置google地图
+#define GMS_MapKey @"AIzaSyA3H9CYuAwohybm2NkesqHI4JpL6EWh5_SE"
+
+
+/************************URL---key *************************/
+
+#define ISPostSuccess [json[@"error"] isEqualToString:@"0"]
+#define Error_Msg json[@"message"]
+#define NOTCONNECT_STR NSLocalizedString(@"未能连接服务器,请稍后再试!", @"PrefixHeader")
+
+#define NoticeCenter [NSNotificationCenter defaultCenter]
+#define Remove_Notice [[NSNotificationCenter defaultCenter] removeObserver:self];
+#define kNotification_TabBarChanged @"kNotification_TabBarChanged"
+#define KNotification_Home_newLink @"KNotification_Home_newLink"
+#define KNotification_Home_gotoSearch @"KNotification_Home_gotoSearch"
+#define KNotification_Home_shaixuanChanged @"KNotification_Home_shaixuanChanged"
+#define KNotification_Home_shaixuanDisappear @"KNotification_Home_shaixuanDisappear"
+#define KNotification_close_fenlei_shaixuan @"KNotification_close_fenlei_shaixuan"
+//必要通知
+#define ChooseNewAddress_Notification @"ChooseNewAddress_Notification"
+#define ChooseNewAddress_only_show @"ChooseNewAddress_Notification_only_show"
+#define K_show_platform_hongbao @"K_show_platform_hongbao"
+//登录
+#define LOGIN_NoticeName @"KNeedLogin"
+//成功登陆
+#define Login_Success @"LoginSuccess"
+// 退出登录
+#define QuitLogin @"QuitLogin"
+// 外卖商家详情界面点击statusBar时tableView滚动到上面
+#define ScrollToTop @"ScrollToTop"
+// 引导页结束切换控制器的通知
+#define AppChangeRootVC @"AppChangeRootVC"
+// 商家详情界面去除titleStr的通知
+#define NaviClearTitle @"NaviClearTitle"
+// 退出多人订餐界面的通知
+#define QuitMoreShopCart @"QuitMoreShopCart"
+// 外卖下单成功
+#define WMCreateOrderSuccess @"WMCreateOrderSuccess"
+
+// 微信支付结果的通知
+#define WXSuccessPay_Notification @"WXSuccessPay_Notification"
+#define WXFailPay_Notification @"WXFailPay_Notification"
+#define ERROR_O [json[@"error"] isEqualToString:@"0"]
+
+#define BannerScale 0.5
+#define ImgScale 0.5
+#define SCALE WIDTH/375
+
+#define UserDefaults [NSUserDefaults standardUserDefaults]
+// UserDefault存储用到的key
+#define PaoTuiXiaoFeiKey @"PaoTuiXiaoFeiKey"
+
+/************************ iPhone X 适配 *************************/
+//是否是iphoneX
+#define isIPhoneX ([UIScreen mainScreen].bounds.size.width>= 375.0f && [UIScreen mainScreen].bounds.size.height >= 812.0f)
+//状态栏高度
+#define STATUS_HEIGHT (isIPhoneX ? 44 : 20)
+//导航栏高
+#define NAVI_HEIGHT (44 + STATUS_HEIGHT)
+//底部安全高度
+#define BOTTOM_SAFE_HEIGHT (isIPhoneX ? 34 : 0)
+//系统手势高度
+#define SYSTEM_GESTURE_HEIGHT (isIPhoneX ? 13 : 0)
+//tabbar高度
+#define TABBAR_HEIGHT (49 + BOTTOM_SAFE_HEIGHT)
+//有tabbar的控制的view的高度
+#define VC_TABBAR_HEIGHT (49 + BOTTOM_SAFE_HEIGHT - SYSTEM_GESTURE_HEIGHT)
+
+#define WMShopCartBottomViewH  (49 + SYSTEM_GESTURE_HEIGHT)
+
+/************************ iPhone X 适配 *************************/
+// 屏幕宽高
+#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define HEIGHT (isIPhoneX ? ([UIScreen mainScreen].bounds.size.height -13 ) :[UIScreen mainScreen].bounds.size.height)
+#define KUI_SCALE WIDTH/375.0
+// 字体大小
+#define FONT(x) [UIFont systemFontOfSize:x]
+#define B_FONT(x) [UIFont boldSystemFontOfSize:x]
+// 图像
+#define IMAGE(x) [UIImage imageNamed:x]
+
+// 坐标
+#define FRAME(x,y,w,h)  CGRectMake(x,y,w,h)
+
+// 十六进制颜色转换
+#define HEX(x,y) [UIColor colorWithHex:x alpha:y]
+
+//颜色
+#define MALL_THEME_COLOR_Alpha(x) HEX(@"ffffff",x)
+#define THEME_COLOR_Alpha(x) HEX(@"20ad20",x)
+#define NaVi_COLOR_Alpha(x) HEX(@"fafafa",x)
+#define LINE_COLOR HEX(@"eae6ed", 1.0f)
+#define BACK_COLOR HEX(@"fafafa",1.0f)
+#define TEXT_COLOR HEX(@"333333",1.0f)
+#define CELL_BORDER_COLOR HEX(@"eeeeee", 1.0f)
+
+#define RandomColor [UIColor colorWithRed:(arc4random()%256 /255.0) green:(arc4random()%256 /255.0) blue:(arc4random()%256/255.0) alpha:1.0]
+
+//隐藏hud
+#define HIDE_HUD [ZQProgressHud removeHudInView:self.view];
+
+//显示hud
+#define SHOW_HUD   ZQProgressHud *hud = [[ZQProgressHud alloc]initWithView:self.view];\
+hud.viewTintColor = [UIColor  colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.6];\
+hud.viewWidth = 50;\
+[hud showHud];\
+dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{[hud removeFromSuperview];});
+
+#define SHOW_HUD_INVIEW(view) ZQProgressHud *hud = [[ZQProgressHud alloc]initWithView:view];\
+hud.viewTintColor = [UIColor  colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.6];\
+hud.viewWidth = 50;\
+[hud showHud];
+
+#define HIDE_HUD_FOR_VIEW(view) [ZQProgressHud removeHudInView:view];
+
+//字符串长度和高度计算
+#define getSize(str,h,font)  [str boundingRectWithSize:CGSizeMake(10000, h) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size
+
+#define getBoldSize(str,h,font)  [str boundingRectWithSize:CGSizeMake(10000, h) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:font]} context:nil].size
+
+#define getStrHeight(str,width,font)  [str boundingRectWithSize:CGSizeMake(width, 10000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size.height
+#ifdef DEBUG
+#define NSLog(format, ...) printf("\n[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
+#else
+#define NSLog(format, ...)
+#endif
+//外卖的订单状态
+typedef NS_ENUM(NSInteger,EWaimaiOrderStatus)
+{
+    EWaimaiOrderStatus_hadRefund = -2,//已退款 -2
+    EWaimaiOrderStatus_hadCancel = -1,//已经取消 -1
+    EWaimaiOrderStatus_waitToPay,//待付款 0
+    EWaimaiOrderStatus_waitShopGetOrder,//等待商户接单 1
+    EWaimaiOrderStatus_ShopHadGetOrder,//商户已经接单 2
+    EWaimaiOrderStatus_distributing,//配送中 3
+    EWaimaiOrderStatus_hadDistributed,//配送完成 4
+    EWaimaiOrderStatus_waitToEvaluate,//待评价 5
+    EWaimaiOrderStatus_hadEavaluate,//已评价 6
+    EWaimaiOrderStatus_refunding,//退款处理中 7
+    EWaimaiOrderStatus_hadNotRefund,//退款已拒绝 8
+    EWaimaiOrderStatus_customering,//客服介入中 9
+};
+//跑腿的订单状态
+typedef NS_ENUM(NSInteger,EPaotuiorderStatus) {
+    EPaotuiorderStatusWaitToSure = -1,//确定完成
+    EPaotuiorderStatusWaitToPay = 0,//待支付
+    EPaotuiorderStatusWaitToJieDan,//待结单
+    EPaotuiorderStatusWaitToQuHuo,//取货中
+    EPaotuiorderStatusWaitToSongHuo,//送货中
+    EPaotuiorderStatusWaitToEvaluate,//待评价
+    EPaotuiorderStatusHasDone,//已完成
+    EPaotuiorderStatusHasCancel,//已取消
+};
+
+#pragma mark ====== 代码宏定义 =======
+#define RespondsSelector(target,selector)  (target && [target respondsToSelector:selector])
+
+struct JHAllOrderFooterBtnMasRect {
+    CGFloat right_margin;   //btn 右边的约束
+    CGFloat top_margin;     //btn 顶部的约束
+    CGFloat bottom_margin;  //btn 底部的约束
+    CGFloat width_margin;   //btn 的宽
+    CGFloat btn_margin;     //btn 之间的间距
+};
+
+typedef struct JHAllOrderFooterBtnMasRect JHAllOrderFooterBtnMasRect;
+
+CG_INLINE JHAllOrderFooterBtnMasRect
+JHAllOrderFooterBtnMasRectMake(CGFloat right_margin, CGFloat top_margin, CGFloat bottom_margin, CGFloat width_margin,CGFloat btn_margin)
+{
+    JHAllOrderFooterBtnMasRect btnMasRect;
+    btnMasRect.right_margin = right_margin;
+    btnMasRect.top_margin = top_margin;
+    btnMasRect.bottom_margin = bottom_margin;
+    btnMasRect.width_margin = width_margin;
+    btnMasRect.btn_margin = btn_margin;
+    return btnMasRect;
+}
+

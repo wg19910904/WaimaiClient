@@ -1,0 +1,1 @@
+../../../LSSafeProtector/LSSafeProtector/Classes/NSMutableAttributedString+Safe.h

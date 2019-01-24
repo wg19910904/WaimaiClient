@@ -1,0 +1,6 @@
+framework module JHHttpTool {
+  umbrella header "JHHttpTool.h"
+
+  export *
+  module * { export * }
+}
